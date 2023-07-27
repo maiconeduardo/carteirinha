@@ -19,7 +19,7 @@ export default function App() {
     return null;
   }
   return (<>
-    <Carregar/>
+    <Carteirinha/>
     </>
     
   );
