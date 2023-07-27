@@ -1,20 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Carteirinha from './src/telas/index.js';
+import { useFonts, Outfit_400Regular, Outfit_700Bold } from '@expo-google-fonts/outfit';
+
+import Carregar from "./src/telas/carteirinha/componentes/splash.js"
+
+
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  
+
+  let [fontsLoaded] = useFonts({
+    "outFitRegular":Outfit_400Regular,
+     "outFitBold":Outfit_700Bold
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  return (<>
+    <Carregar/>
+    </>
+    
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
